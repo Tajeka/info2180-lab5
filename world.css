@@ -1,76 +1,76 @@
 /* Add your own styles */
 header{
-    background-color: blue;
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: white;
-  }
+  background-color: blue;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+body{
+  background-color: rgb(115, 166, 210);
+}
+
+img {
+  max-width: 20%;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+#controls{
+  margin: 24px;
+  display: flex;
+  justify-content: center;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+input {
+  width: 600px;
+  padding:  15px;
+  border: none;
+  border-radius: 5px;
   
-  body{
-    background-color: rgb(115, 166, 210);
-  }
+}
+#lookup, #city{
+  padding: 10px 27px;
+  border: none;
+  border-radius: 7px;
+  background-color: green;
+  font-weight: 600;
+  color: white;
+}
+
+#city{
+  background-color: blue;
+  margin-left: 12px;
+}
+
+
+#result{
+  display: flex;
+  justify-content: center;
+}
+
+th {
+  background-color: white;
+  padding: 15px;
   
-  img {
-    max-width: 20%;
-    border-radius: 50%;
-    margin-right: 5px;
-  }
-  
-  #controls{
-    margin: 24px;
-    display: flex;
-    justify-content: center;
-  }
-  .btn{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 24px;
-  }
-  
-  input {
-    width: 600px;
-    padding:  15px;
-    border: none;
-    border-radius: 5px;
-    
-  }
-  #lookup, #city{
-    padding: 10px 27px;
-    border: none;
-    border-radius: 7px;
-    background-color: green;
-    font-weight: 600;
-    color: white;
-  }
-  
-  #city{
-    background-color: blue;
-    margin-left: 12px;
-  }
-  
-  
-  #result{
-    display: flex;
-    justify-content: center;
-  }
-  
-  th {
-    background-color: white;
-    padding: 15px;
-    
-  }
-  td {
-    border: 1px solid #ddd; 
-    padding: 10px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #76d0f9; 
-  }
-  
-  tr:nth-child(odd) {
-    background-color: white;
-  }
+}
+td {
+  border: 1px solid #ddd; 
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #76d0f9; 
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
