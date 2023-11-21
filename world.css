@@ -37,13 +37,18 @@ header{
     border-radius: 5px;
     
   }
-  #lookup{
+  #lookup, #city{
     padding: 10px 27px;
     border: none;
     border-radius: 7px;
     background-color: green;
     font-weight: 600;
     color: white;
+  }
+  
+  #city{
+    background-color: blue;
+    margin-left: 12px;
   }
   
   
