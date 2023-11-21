@@ -6,11 +6,38 @@ $dbname = 'world';
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
 
-if(isset($_GET['country'])) {
-     
+if (isset($_GET['lookup']) && $_GET['lookup'] === 'cities') {
+
     $raw_country = $_GET['country'];
     $country = htmlspecialchars($raw_country, ENT_QUOTES, 'UTF-8');
+    // Fetch data
+    $stmt = $conn->query("SELECT cities.name, cities.district, cities.population FROM cities JOIN countries ON cities.country_code = countries.code WHERE countries.name LIKE '%$country%'");
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
 
+    $cities = '<table>';
+    $cities .= '<tr>';
+      $cities .='<th>Name</th>';
+      $cities .='<th >District</th>';
+      $cities .='<th >Population</th>';
+    $cities .= '</tr>';
+
+   foreach ($results as $row){
+
+    $cities .= '<tr>';
+    $cities .= '<td>' . $row['name'] . '</td>';
+    $cities .= '<td>' . $row['district'] . '</td>';
+    $cities .= '<td>' . $row['population'] . '</td>';
+    $cities .= '</tr>';
+   }
+   $cities .= '</table>';
+   echo json_encode($cities);
+   exit;
+}
+
+elseif(isset($_GET['country'])) {
+    $raw_country = $_GET['country'];
+    $country = htmlspecialchars($raw_country, ENT_QUOTES, 'UTF-8');
     // Fetch data
     $stmt = $conn->query("SELECT * FROM countries WHERE name LIKE '%$country%';");
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
